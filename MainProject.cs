@@ -1,4 +1,4 @@
-﻿using LinqProject.Input;
+using LinqProject.Input;
 using System;
 
 namespace LinqProject
@@ -24,58 +24,58 @@ namespace LinqProject
             #endregion
 
             #region Aggregate(Average,Count,Max,Min,Sum)
-            //aggregateOperators.Operator();
-            //aggregateOperators.AverageOperator();
-            //aggregateOperators.CountOperator();
-            //aggregateOperators.MaxOperator();
-            //aggregateOperators.MinOperator();
-            //aggregateOperators.SumOperator();
+            aggregateOperators.Operator();
+            aggregateOperators.AverageOperator();
+            aggregateOperators.CountOperator();
+            aggregateOperators.MaxOperator();
+            aggregateOperators.MinOperator();
+            aggregateOperators.SumOperator();
             #endregion
 
             #region Filtering(Where,OfType,Where..Contains)
-            //filteringOperators.WhereOperator();
-            //filteringOperators.OfTypeOperator();
+            filteringOperators.WhereOperator();
+            filteringOperators.OfTypeOperator();
             #endregion
 
             #region Element(ElementAt, ElementAtOrDefault, First, FirstOrDefault, Last, LastOrDefault, Single, SingleOrDefault)
-            //elementOperators.ElementAtOperator();
-            //elementOperators.ElementAtOrDefaultOperator();
-            //elementOperators.FirstOperator();
-            //elementOperators.FirstOrDefaultOperator();
-            //elementOperators.LastOperator();
-            //elementOperators.LastOrDefaultOperator();
-            //elementOperators.SingleOperator();
-            //elementOperators.SingleOrDefaultOperator();
+            elementOperators.ElementAtOperator();
+            elementOperators.ElementAtOrDefaultOperator();
+            elementOperators.FirstOperator();
+            elementOperators.FirstOrDefaultOperator();
+            elementOperators.LastOperator();
+            elementOperators.LastOrDefaultOperator();
+            elementOperators.SingleOperator();
+            elementOperators.SingleOrDefaultOperator();
             #endregion
 
             #region Equality(SequenceEqual)
-            //equalityOperator.SequenceEqualOperator();
+            equalityOperator.SequenceEqualOperator();
             #endregion
 
             #region Generation(DefaultIfEmpty,Empty,Range,Repeat)
-            //generationOperators.DefaultIfEmptyOperator();
-            //generationOperators.EmptyOperator();
-            //generationOperators.RangeOperator();
-            //generationOperators.RepeatOperator();
+            generationOperators.DefaultIfEmptyOperator();
+            generationOperators.EmptyOperator();
+            generationOperators.RangeOperator();
+            generationOperators.RepeatOperator();
             #endregion
 
             #region Gouping(GroupBy,ToLookup)
-            //groupingOperators.GroupByDepartmentNGenderOperator();
-            //groupingOperators.GroupByOperator();
-            //groupingOperators.ToLookupOperator();
+            groupingOperators.GroupByDepartmentNGenderOperator();
+            groupingOperators.GroupByOperator();
+            groupingOperators.ToLookupOperator();
             #endregion
 
             #region Joining(Join,GroupJoin)
-            //joiningOperators.LeftOuterJoinOperator();
-            //joiningOperators.JoinOperators();
-            //joiningOperators.GroupJoin();
+            joiningOperators.LeftOuterJoinOperator();
+            joiningOperators.JoinOperators();
+            joiningOperators.GroupJoin();
             #endregion
 
             #region Partitioning(Skip,SkipWhile,Take,TakeWhile)
-            //partitioningOperators.TakeOperator();
-            //partitioningOperators.SkipOperator();
-            //partitioningOperators.TakeWhileOperator();
-            //partitioningOperators.SkipWhileOperator();
+            partitioningOperators.TakeOperator();
+            partitioningOperators.SkipOperator();
+            partitioningOperators.TakeWhileOperator();
+            partitioningOperators.SkipWhileOperator();
             #endregion
 
             #region Projection(Select,SelectMany)
@@ -84,23 +84,23 @@ namespace LinqProject
             #endregion
 
             #region Quantifier(All, Any, Contains)
-            //quantifierOperators.AllOperators();
-            //quantifierOperators.AnyOperators();
-            //quantifierOperators.ContainsOperators();
+            quantifierOperators.AllOperators();
+            quantifierOperators.AnyOperators();
+            quantifierOperators.ContainsOperators();
             #endregion
 
             #region Set(Distinct,Except,Intersect,Union)
-            //setOperators.DistinctOperator();
-            //setOperators.ExceptOperator();
-            //setOperators.IntersectOperator();
-            //setOperators.UnionOperator();
+            setOperators.DistinctOperator();
+            setOperators.ExceptOperator();
+            setOperators.IntersectOperator();
+            setOperators.UnionOperator();
             #endregion
 
             #region Sorting(OrderBy,OrderByDecending,ThenBy,ThenByDescending, Reverse)
-            //sortingOperators.OrderByOperator();
-            //sortingOperators.OrderByDecendingOperator();
-            //sortingOperators.ThenByOperator();
-            //sortingOperators.ThenByDescendingOperator();
+            sortingOperators.OrderByOperator();
+            sortingOperators.OrderByDecendingOperator();
+            sortingOperators.ThenByOperator();
+            sortingOperators.ThenByDescendingOperator();
             #endregion
 
             Console.ReadLine();
