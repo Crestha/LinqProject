@@ -87,19 +87,19 @@ namespace LinqProject.Input
             var maxSalary = employees.GetAllEmployee().Select(x => x.Salary).Max();
             var maxPaidEmployeeInfo = employees.GetAllEmployee().Where(x => x.Salary >= maxSalary)
                                                 .Join(departments.GetAllDepartment(),
-                                                x => x.EmployeeID,
-                                                y => y.DepartmentID,
-                                                (x, y) => new
+                                                emp => emp.DepartmentID,
+                                                dept => dept.DepartmentID,
+                                                (employee, department) => new
                                                 {
-                                                    Employees = x,
-                                                    Departments = y
+                                                    Employees = employee,
+                                                    Departments = department.DepartmentName
                                                 }
                                                 );
 
 
             foreach (var info in maxPaidEmployeeInfo)
             {
-                Console.WriteLine($"Max(),Join: {info.Employees.FullName()} is paid highest salary {maxSalary} (Department Name : {info.Departments.DepartmentName})");
+                Console.WriteLine($"using Max(),Join(): {info.Employees.FullName()} in {info.Departments} is paid highest salary {info.Employees.Salary}");
             }
             Console.WriteLine("--------------------------------------------------------------------------------------");
         }
@@ -109,18 +109,18 @@ namespace LinqProject.Input
             var minSalary = employees.GetAllEmployee().Select(x => x.Salary).Min();
             var minPaidEmployeeInfo = employees.GetAllEmployee().Where(x => x.Salary <= minSalary)
                                                 .Join(departments.GetAllDepartment(),
-                                                x => x.EmployeeID,
-                                                y => y.DepartmentID,
-                                                (x, y) => new
+                                                emp => emp.DepartmentID,
+                                                dept => dept.DepartmentID,
+                                                (employee, department) => new
                                                 {
-                                                    Employees = x,
-                                                    Departments = y
+                                                    Employees = employee,
+                                                    Departments = department.DepartmentName
                                                 }
                                                 );
 
             foreach (var info in minPaidEmployeeInfo)
             {
-                Console.WriteLine($"Min(),Join: {info.Employees.FullName()} is paid lowest salary {minSalary} (Department Name : {info.Departments.DepartmentName})");
+                Console.WriteLine($"using Min(),Join(): {info.Employees.FullName()} in {info.Departments} is paid lowest salary {info.Employees.Salary}");
             }
             Console.WriteLine("--------------------------------------------------------------------------------------");
         }
