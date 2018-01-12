@@ -1,4 +1,4 @@
-﻿using LinqProject.Model;
+using LinqProject.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,8 +14,8 @@ namespace LinqProject.Input
         {
             IList<string> emptyList = new List<string>();
 
-            var newList1 = emptyList.DefaultIfEmpty();
-            var newList2 = emptyList.DefaultIfEmpty("None");
+            IEnumerable<string> newList1 = emptyList.DefaultIfEmpty();
+            IEnumerable<string> newList2 = emptyList.DefaultIfEmpty("None");
 
             Console.WriteLine($"Count: {newList1.Count()}");
             Console.WriteLine($"Value: {newList1.ElementAt(0)}");
@@ -28,8 +28,8 @@ namespace LinqProject.Input
 
         public void EmptyOperator()
         {
-            var emptyCollection1 = Enumerable.Empty<string>();
-            var emptyCollection2 = Enumerable.Empty<Employee>();
+            IEnumerable<string> emptyCollection1 = Enumerable.Empty<string>();
+            IEnumerable<Employee> emptyCollection2 = Enumerable.Empty<Employee>();
 
             Console.WriteLine($"Count: {emptyCollection1.Count()}");
             Console.WriteLine($"Type: {emptyCollection1.GetType().Name }");
@@ -42,7 +42,9 @@ namespace LinqProject.Input
 
         public void RangeOperator()
         {
-            var intCollection = Enumerable.Range(10, 10);
+            char start = 'A';
+            int count = 5;
+            IEnumerable<int> intCollection = Enumerable.Range(start, count);
             Console.WriteLine($"Total Count: {intCollection.Count()}");
 
             for (int i = 0; i<intCollection.Count(); i++)
@@ -53,7 +55,9 @@ namespace LinqProject.Input
 
         public void RepeatOperator()
         {
-            var intCollection = Enumerable.Repeat<int>(10, 10);
+            string repeatElement = "Repeat Me";
+            int count = 5;
+            IEnumerable<string> intCollection = Enumerable.Repeat(repeatElement, count);
             Console.WriteLine($"Total Count: {intCollection.Count()}");
 
             for (int i = 0; i < intCollection.Count(); i++)
