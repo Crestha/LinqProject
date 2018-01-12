@@ -24,7 +24,6 @@ namespace LinqProject
             #endregion
 
             #region Aggregate(Average,Count,Max,Min,Sum)
-            aggregateOperators.Operator();
             aggregateOperators.AverageOperator();
             aggregateOperators.CountOperator();
             aggregateOperators.MaxOperator();
