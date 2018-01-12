@@ -17,7 +17,7 @@ namespace LinqProject.Model
         {
             return new List<Department>()
             {
-                new Department() { DepartmentID = 1, DepartmentName = "Accounts" },
+                new Department() { DepartmentID = 1, DepartmentName = "ACCOUNTS" },
                 new Department() { DepartmentID = 2, DepartmentName = "IT" },
                 new Department() { DepartmentID = 3, DepartmentName = "HR" }
             };
