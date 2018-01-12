@@ -3,7 +3,7 @@ using System;
 using System.Collections;
 using System.Linq;
 
-//Where, OfType, WhereContains
+//Where, OfType, Where..Contains
 namespace LinqProject.Input
 {
     public class FilteringOperators
@@ -13,11 +13,19 @@ namespace LinqProject.Input
         //The Where operator filters the collection based on a predicate function or given criteria.
         public void WhereOperator()
         {
-            var query = employees.GetAllEmployee().Where(e=>e.Gender=="Female");
-            Console.WriteLine("Female Employee List: ");
+            string gender = string.Empty;
+            do
+            {
+                Console.WriteLine("Enter the 'Male' or 'Female'");
+                gender = Console.ReadLine().ToLower();
+            }
+            while (gender != "male" && gender != "female");
+            
+            var query = employees.GetAllEmployee().Where(e => e.Gender.ToLower() == gender);
+            Console.WriteLine($"Filtered by Gender = '{gender.ToUpper()}' are : ");
             foreach (var item in query)
             {
-                Console.WriteLine($"Filtered by Gender = Female are {item.FirstName}");
+                Console.WriteLine($"{item.FullName()}");
             }
             Console.WriteLine("---------------------------------------------------------------------");
         }
@@ -41,6 +49,8 @@ namespace LinqProject.Input
 
             var deptResult = from s in mixedList.OfType<Department>()
                             select s;
+
+            Console.WriteLine("OfType<TResult>(): ");
 
             foreach (var str in stringResult)
                 Console.WriteLine(str);
