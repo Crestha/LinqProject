@@ -1,42 +1,14 @@
-﻿using LinqProject.Model;
+using LinqProject.Model;
 using System;
 using System.Linq;
 
-//GroupJoin(Equivalent to left outer join), Join
+//Join(like inner join of SQL), GroupJoin(Equivalent to left outer join)
 namespace LinqProject.Input
 {
     public class JoiningOperators
     {
         Employee employees = new Employee();
         Department departments = new Department();
-
-        public void LeftOuterJoinOperator()
-        {
-            var leftOuterJoin = employees.GetAllEmployee().GroupJoin(departments.GetAllDepartment(),
-                                    e => e.DepartmentID,
-                                    d => d.DepartmentID,
-                                    (emp, dept) => new
-                                    {
-                                        emp,
-                                        dept
-                                    })
-                                    .SelectMany(z => z.dept.DefaultIfEmpty(),
-                                    (a, b) => new
-                                    {
-                                        EmployeeName = a.emp.FullName(),
-                                        DepartmentName = b == null ? "No Department" : b.DepartmentName
-                                    }
-                                    );
-
-
-            Console.WriteLine("Enter the name of the Department");
-            string departmentName = Console.ReadLine();
-
-            var count = leftOuterJoin.Where(x => x.DepartmentName == departmentName).Count();
-
-            Console.WriteLine("leftOuterJoin: " + count);
-            Console.WriteLine("---------------------------------------------------------------------");
-        }
 
         //Join is like inner join of SQL. It returns a new collection that contains common elements from two collections whose keys matches.
         public void JoinOperators()
@@ -59,11 +31,11 @@ namespace LinqProject.Input
             Console.WriteLine("---------------------------------------------------------------------");
         }
 
-        public void GroupJoin()
+        public void GroupJoinOperators()
         {
             var groupJoin = departments.GetAllDepartment()//outer sequence
-                .GroupJoin(
-                employees.GetAllEmployee(),//inner sequence
+                                        .GroupJoin(
+                                            employees.GetAllEmployee(),//inner sequence
                                             dept => dept.DepartmentID,//outerKeySelector
                                             emp => emp.DepartmentID,//innerKeySelector
                                             (deparment, employeeGroup) => new //result selector
@@ -76,6 +48,7 @@ namespace LinqProject.Input
             {
                 Console.WriteLine("---------------------------------------------------------------------");
                 Console.WriteLine(groupDept.DeptName);
+                Console.WriteLine("---------------------------------------------------------------------");
 
                 foreach (var groupEmp in groupDept.EmpName)
                     Console.WriteLine(groupEmp.FullName());
