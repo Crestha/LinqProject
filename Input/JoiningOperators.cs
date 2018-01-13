@@ -1,4 +1,4 @@
-﻿using LinqProject.Model;
+using LinqProject.Model;
 using System;
 using System.Linq;
 

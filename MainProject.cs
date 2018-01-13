@@ -65,9 +65,8 @@ namespace LinqProject
             #endregion
 
             #region Joining(Join,GroupJoin)
-            joiningOperators.LeftOuterJoinOperator();
             joiningOperators.JoinOperators();
-            joiningOperators.GroupJoin();
+            joiningOperators.GroupJoinOperators();
             #endregion
 
             #region Partitioning(Skip,SkipWhile,Take,TakeWhile)
@@ -100,6 +99,7 @@ namespace LinqProject
             sortingOperators.OrderByDecendingOperator();
             sortingOperators.ThenByOperator();
             sortingOperators.ThenByDescendingOperator();
+            sortingOperators.ReverseOperator();
             #endregion
 
             Console.ReadLine();
