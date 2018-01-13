@@ -65,9 +65,8 @@ namespace LinqProject
             #endregion
 
             #region Joining(Join,GroupJoin)
-            joiningOperators.LeftOuterJoinOperator();
             joiningOperators.JoinOperators();
-            joiningOperators.GroupJoin();
+            joiningOperators.GroupJoinOperators();
             #endregion
 
             #region Partitioning(Skip,SkipWhile,Take,TakeWhile)
