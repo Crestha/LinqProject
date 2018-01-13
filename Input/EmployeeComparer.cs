@@ -1,5 +1,6 @@
 ﻿using LinqProject.Model;
 using System.Collections.Generic;
+using System;
 
 namespace LinqProject.Input
 {
@@ -7,8 +8,8 @@ namespace LinqProject.Input
     {
         public bool Equals(Employee x, Employee y)
         {
-            if (x.EmployeeID == y.EmployeeID &&
-                        x.FirstName.ToLower() == y.FirstName.ToLower())
+            if (string.Equals(x.FirstName, y.FirstName, StringComparison.OrdinalIgnoreCase))
+            //x.EmployeeID == y.EmployeeID && x.FirstName.ToLower() == y.FirstName.ToLower())
                 return true;
 
             return false;
