@@ -10,6 +10,19 @@ namespace LinqProject.Input
     {
         Employee employees = new Employee();
        
+        public List<Employee> GetAllEmployee2()
+        {
+            List<Employee> employees = new List<Employee>()
+            {
+                new Employee(){ EmployeeID = 1, FirstName = "Geny", LastName = "Shrestha", Gender="Female", Salary = 24000, DepartmentID = 2 },
+                new Employee(){ EmployeeID = 2, FirstName = "Enrique", LastName = "Aryal", Gender="Male", Salary = 20200, DepartmentID = 2 },
+                new Employee(){ EmployeeID = 3, FirstName = "Katrina", LastName = "Khanal", Gender="Female", Salary = 18000, DepartmentID = 3 },
+                new Employee(){ EmployeeID = 4, FirstName = "Geny", LastName = "Dongol", Gender="Female", Salary = 52000, DepartmentID = 1 },
+                new Employee(){ EmployeeID = 5, FirstName = "Johnson", LastName = "Johnson", Gender="Male", Salary = 56000, DepartmentID = 3 }
+            };
+            return employees;
+        }
+        
         //The Distinct extension method returns a new collection of unique elements from the given collection. 
         public void DistinctOperator()
         {
