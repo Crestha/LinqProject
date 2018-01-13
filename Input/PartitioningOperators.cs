@@ -12,7 +12,7 @@ namespace LinqProject.Input
         {
             Employee employees = new Employee();
             var take = employees.GetAllEmployee().Take(3);
-            Console.WriteLine("Take(3) elements from the start of a sequence: ");
+            Console.WriteLine("Take(3): Takes 3 elements from the start of a sequence: ");
             foreach (var item in take)
             {
                 Console.WriteLine(item.FirstName);
@@ -25,7 +25,7 @@ namespace LinqProject.Input
         {
             Employee employees = new Employee();
             var skip = employees.GetAllEmployee().Skip(3);
-            Console.WriteLine("Skip(3) elements and return remaining elements of a sequence: ");
+            Console.WriteLine("Skip(3): Skips 3 elements from the start and return remaining elements of a sequence: ");
             foreach (var item in skip)
             {
                 Console.WriteLine(item.FirstName);
@@ -37,8 +37,8 @@ namespace LinqProject.Input
         public void TakeWhileOperator()
         {
             Employee employees = new Employee();
-            var takeWhile = employees.GetAllEmployee().TakeWhile(x=>x.FirstName.Length>3);
-            Console.WriteLine("TakeWhile() returns elements from a sequence as long as condition(FirstName.Length>3) is true: ");
+            var takeWhile = employees.GetAllEmployee().TakeWhile(x => x.FirstName.Length > 3);
+            Console.WriteLine("TakeWhile() returns elements from a sequence as long as condition(FirstName.Length > 3) is true: ");
             foreach (var item in takeWhile)
             {
                 Console.WriteLine(item.FirstName);
@@ -51,7 +51,7 @@ namespace LinqProject.Input
         {
             Employee employees = new Employee();
             var skipWhile = employees.GetAllEmployee().SkipWhile(x => x.FirstName.Length > 3);
-            Console.WriteLine("SkipWhile() bypasses elements in a sequence as long as condition(FirstName.Length>3) is true and returns remaining elements: ");
+            Console.WriteLine("SkipWhile() bypasses elements in a sequence as long as condition(FirstName.Length > 3) is true and returns remaining elements: ");
             foreach (var item in skipWhile)
             {
                 Console.WriteLine(item.FirstName);
