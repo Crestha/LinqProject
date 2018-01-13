@@ -99,6 +99,7 @@ namespace LinqProject
             sortingOperators.OrderByDecendingOperator();
             sortingOperators.ThenByOperator();
             sortingOperators.ThenByDescendingOperator();
+            sortingOperators.ReverseOperator();
             #endregion
 
             Console.ReadLine();
