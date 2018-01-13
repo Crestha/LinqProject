@@ -57,15 +57,15 @@ namespace LinqProject.Input
         //The Contains operator checks whether a specified element exists in the collection or not and returns a boolean.
         public void ContainsOperators()
         {
-            Employee emp = new Employee() { EmployeeID = 3, FirstName = "Elie" };
-            bool containsOperator = employees.GetAllEmployee().Contains(emp, new EmployeeComparer());
-            if (containsOperator)
+            var employeeToFind = new Employee() { FirstName = "Elie" };
+            bool containsEmployee = employees.GetAllEmployee().Contains(employeeToFind, new EmployeeComparer());
+            if (containsEmployee)
             {
-                Console.WriteLine($"Contain Operators true?: {containsOperator}");
+                Console.WriteLine($"Contain Operators true?: {containsEmployee}");
             }
             else
             {
-                Console.WriteLine($"Contain Operators false?: {containsOperator}");
+                Console.WriteLine($"Contain Operators false?: {containsEmployee}");
             }
             Console.WriteLine("---------------------------------------------------------------------");
         }
