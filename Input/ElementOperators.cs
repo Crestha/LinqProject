@@ -70,7 +70,7 @@ namespace LinqProject.Input
         {
             try
             {
-                var query = employees.GetAllEmployee().SingleOrDefault(e => e.Salary > 55000);
+                var query = employees.GetAllEmployee().Single(e => e.Salary > 55000);
                 Console.WriteLine($"Single Employee with salary > 55000 is {query.FullName()}.");
                 Console.WriteLine("--------------------------------------------------------------------------------------");
             }
