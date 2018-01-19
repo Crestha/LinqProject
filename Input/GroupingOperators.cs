@@ -3,10 +3,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-//GroupBy,ToLookup
+// GroupBy,ToLookup.
 namespace LinqProject.Input
 {
-    //GroupBy & ToLookup return a collection that has a key and an inner collection based on a key field value.The execution of GroupBy is deferred whereas that of ToLookup is immediate.
+    // Grouping refers to the operation of putting data into groups so that the elements in each group share a common attribute.
+    // GroupBy & ToLookup return a collection that has a key and an inner collection based on a key field value.The execution of GroupBy is deferred whereas that of ToLookup is immediate.
     public class GroupingOperators
     {
         Employee employees = new Employee();
@@ -51,30 +52,32 @@ namespace LinqProject.Input
             Console.WriteLine("---------------------------------------------------------------------");
         }
 
-        public void GroupByOperator()
+       // Groups elements that share a common attribute. Each group is represented by an IGrouping<TKey,TElement> object.
+       public void GroupByOperator()
         {
-            var groupedResult = employees.GetAllEmployee().GroupBy(e => e.Gender);
+            IEnumerable<IGrouping<string,Employee>> groupedResult = employees.GetAllEmployee().GroupBy(e => e.Gender);
 
-            foreach (var salaryGroup in groupedResult)
+            foreach (IGrouping<string, Employee> salaryGroup in groupedResult)
             {
-                Console.WriteLine($"GroupBy Salary {salaryGroup.Key} : ");  //Each group has a key 
+                Console.WriteLine($"GroupBy Salary {salaryGroup.Key} : ");  
 
-                foreach (Employee e in salaryGroup)  //Each group has a inner collection  
-                    Console.WriteLine($"{e.FullName()}");
+                foreach (Employee emp in salaryGroup) 
+                    Console.WriteLine($"{emp.FullName()}");
             }
             Console.WriteLine("---------------------------------------------------------------------");
         }
 
+        // Inserts elements into a Lookup<TKey,TElement> (a one-to-many dictionary) based on a key selector function.
         public void ToLookupOperator()
         {
-            var lookupResult = employees.GetAllEmployee().ToLookup(e => e.Salary);
+            ILookup<int, Employee> lookupResult = employees.GetAllEmployee().ToLookup(e => e.Salary);
 
-            foreach (var group in lookupResult)
+            foreach (IGrouping<int, Employee> group in lookupResult)
             {
-                Console.WriteLine($"ToLookup -GroupBy Salary {group.Key} : ");  //Each group has a key 
+                Console.WriteLine($"ToLookup -GroupBy Salary {group.Key} : ");   
 
-                foreach (Employee e in group)  //Each group has a inner collection  
-                    Console.WriteLine($"{e.FullName()}");
+                foreach (Employee emp in group)  
+                    Console.WriteLine($"{emp.FullName()}");
             }
             Console.WriteLine("---------------------------------------------------------------------");
         }
