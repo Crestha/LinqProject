@@ -17,6 +17,7 @@ namespace LinqProject.Classes
             Console.WriteLine("1. OrderBy()-Sorting Employee Names in Ascending Order: ");
             foreach (Employee names in query)
             {
+                //string interpolation
                 Console.WriteLine($"{names.FullName()}");
             }
         }
